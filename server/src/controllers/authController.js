@@ -26,7 +26,7 @@ class AuthController {
             }
 
             const result = await authService.login({ username, password });
-            res.status(200).json({ message: 'Login Successfully', token: result.token })
+            res.status(200).json({ message: 'Login Successfully', token: result.token });
         } catch (error) {
             console.error('Error in Login:', err.message);
             res.status(500).json({ message: 'Internal Server Error' });

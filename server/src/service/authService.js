@@ -20,7 +20,7 @@ class AuthService {
 
     async login({ username, password }) {
         const sql = 'SELECT * FROM users WHERE username = ?';
-        const result = await query(sql, [username])
+        const result = await query(sql, [username]);
 
         if (result.length === 0) throw new Error('User Not Found');
 
@@ -32,9 +32,9 @@ class AuthService {
             { id: user.id, username: user.username },
             process.env.JWT_SECRET,
             { expiresIn: process.env.JWT_EXPIRES_IN || '1h' }
-        )
+        );
 
-        return { token }
+        return { token };
     }
 }
 
