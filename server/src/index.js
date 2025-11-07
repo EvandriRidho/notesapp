@@ -13,6 +13,7 @@ app.use(morgan('dev'));
 
 app.use('/api/v1/notes', notesRouter);
 app.use('/api/v1/auth', authRouter)
+app.get('/', (req, res) => res.send('Hello World!'))
 
 
 const PORT = process.env.PORT || 3000;
